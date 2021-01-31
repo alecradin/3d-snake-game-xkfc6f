@@ -30,7 +30,7 @@ class App extends Component<AppProps, AppState> {
           OUTPUT: <br />
         </pre>
         {
-            <SnakeTests />
+             <SnakeTests />
         }
         {
           // <DuckTests />
@@ -44,8 +44,8 @@ render(<App />, document.getElementById('root'));
 
 // Add display statements below
 // display("Let's get started with React TypeScript!");
-const greenSnake = new Snake();
-const maroonSnake =  new Snake();
-greenSnake.move();
-maroonSnake.move();
+const greenSnake = new Snake("green");
+greenSnake.move(3);
+greenSnake.move(10);
+greenSnake.turn(1);
 
