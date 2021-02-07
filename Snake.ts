@@ -3,21 +3,17 @@ import display from './display';
 // place your code on line 5 above the export statement below
 
 class Snake {
-  public currentPosition: number;
-  public currentDirection: number;
+  private currentPosition: number;
+  private currentDirection: number;
   constructor () {
     this.currentPosition = 0;
-    this.currentDirection = 0;
+    this.currentDirection = 1;
   }
-  move(squares:number){
-  if (this.currentDirection <= 1)
-  return this.currentPosition + squares;
-  else return this.currentPosition - squares;
+  public move(squares:number){
+  this.currentPosition += this.currentDirection * squares;
   }
-  turn(direction:number){
-    if (this.currentDirection = 1)
-    return this.currentDirection
-    else return this.currentDirection = -1;
+  public turn(direction:number){
+    this.currentDirection *= -1;
   }
   public get position() {
     return this.currentPosition;
