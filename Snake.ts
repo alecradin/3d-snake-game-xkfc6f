@@ -1,51 +1,39 @@
 import display from './display';
-
+import Point from "./Point";
 // place your code on line 5 above the export statement below
-
-class Point {
-  private xcoord: number;
-  private ycoord: number;
-  public constructor() {
-    this.xcoord = xcoord;
-    this.ycoord = ycoord;
-  }
-  public get nPoint() {
-  return this.xcoord,this.ycoord;
-  }
-}
 class Snake {
-  private currentPosition: number;
-  private currentDirection: number;
-  public constructor () {
-    this.currentPosition = 0;
+  currentLocation: point;
+  currentDirection: number;
+  constructor () {
+    this.currentLocation = new Point(0,0);
     this.currentDirection = 1;
   }
-  public move(squares:number){
-  this.currentPosition += this.currentDirection * squares;
-  if (this.position = newPoint(this.position.x,this.position.y)) return this.position 
+  turnLeft() {
+    this.currentDirection--;
+    if (this.currentDirection == 0) this.currentDirection = 4;
   }
-  public turn(){
-    this.currentDirection *= -1;
+  turnRight() {
+    this.currentDirection++;
+    if (this.currentDirection == 5) this.currentDirection = 1;
   }
-  public get position() {
-    return this.currentPosition;
+  move(steps: number) {
+    let x = this.currentLocation.x;
+    let y = this.currentLocation.y;
+
+    if (this.currentDirection == 1) {
+      y += steps;
+    }
+    if (this.currentDirection == 2) {
+      x += steps;
+    }
+    if (this.currentDirection == 3) {
+      y -= steps;
+    }
+    if (this.currentDirection == 4) {
+      x -= steps;
+    }
+
+    this.currentLocation = new Point(x,y);
   }
-  set newPoint (initialPoint:number) {
-    this.xcoord = 0;
-    this.ycoord = 0;
-  }
-  public turnLeft () {
-    if (this.xcoord < 0) display ("Left")
-    else if (this.ycoord < 0) display ("Down")
-    else if (this.xcoord > 0) display ("Right")
-    else display ("Up")
-  }
-  public turnRight () {
-    if (this.xcoord > 0) display ("Right")
-    else if (this.xoord < 0) display ("Left")
-    else if (this.ycoord < 0) display ("Down")
-    else display ("Up")
-  }
-  
 }
 export default Snake;
