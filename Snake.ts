@@ -35,5 +35,8 @@ class Snake {
 
     this.currentLocation = new Point(x,y);
   }
+  get direction() {
+    return this.currentDirection;
+  }
 }
 export default Snake;

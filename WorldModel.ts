@@ -2,6 +2,8 @@ import Snake from "./Snake";
 
 class WorldModel {
   _snake : Snake;
+  width: number;
+  height: number;
 
   constructor(s: Snake) {
     this._snake = s;
@@ -11,6 +13,12 @@ class WorldModel {
   }
   get snake() {
     return this._snake;
+  }
+  get width () {
+    return this.width;
+  }
+  get height () {
+    return this.height;
   }
 }
 
