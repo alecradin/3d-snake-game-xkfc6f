@@ -1,4 +1,6 @@
+import display from "./display";
 import Snake from "./Snake";
+import View from "./View";
 
 class WorldModel {
   _snake : Snake;
@@ -10,6 +12,7 @@ class WorldModel {
   }
   update(steps: number) {
     this._snake.move(steps);
+  
   }
   get snake() {
     return this._snake;
@@ -19,6 +22,12 @@ class WorldModel {
   }
   get height () {
     return this.height;
+  }
+  view(){
+    this.view = null;
+  }
+  set newView(newerView: display) {
+    return newerView;
   }
 }
 
