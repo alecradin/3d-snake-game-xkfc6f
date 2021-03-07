@@ -1,13 +1,11 @@
-import Snake from "./Snake";
 import SnakeController from "./SnakeController";
 
 abstract class Player {
-constructor(SnakeController:sc){}
-  abstract() {
-
+  sc: SnakeController;
+  constructor(sc: SnakeController) {
+    this.sc = sc;
   }
-  makeTurn() {
-    
-  }
+  abstract makeTurn();
 }
+
 export default Player;

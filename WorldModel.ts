@@ -1,33 +1,34 @@
-import display from "./display";
 import Snake from "./Snake";
 import View from "./View";
-
 class WorldModel {
-  _snake : Snake;
-  width: number;
+  snake: Snake;
   height: number;
+  width: number;
+  _view: View;
 
-  constructor(s: Snake) {
-    this._snake = s;
+  constructor(snake: Snake, height, width) {
+    this.snake = snake;
+    this.height = height;
+    this.width = width;
+    this._view = null;
   }
-  update(steps: number) {
-    this._snake.move(steps);
-  
+  public update(steps: number) {
+    this.snake.move(steps);
+    if (this._view != null) this._view.display(this);
   }
-  get snake() {
-    return this._snake;
+
+  public get Snake() {
+    return this.snake;
   }
-  get width () {
-    return this.width;
-  }
-  get height () {
+  public get worldHeight() {
     return this.height;
   }
-  view(){
-    this.view = null;
+  public get worldWidth() {
+    return this.width;
   }
-  set newView(newerView: display) {
-    return newerView;
+
+  public set view(view: View) {
+    this._view = view;
   }
 }
 
