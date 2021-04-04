@@ -1,17 +1,19 @@
 import display from "./display";
-
 import Point from "./Point";
+import Colliadable from "./Colliadable";
 
 class Snake {
   currentParts: Point[] = [];
   currentDirection: number = 1;
   size: number;
+  isCurrentlyActive: any;
 
   constructor(startPosition: Point, size: number) {
     this.currentParts.push(startPosition);
     for (let i: number = 0; i < size - 2; i++)
       this.currentParts.push(new Point(startPosition.x, startPosition.y - i));
     this.size = size;
+    this.isCurrentlyActive == true;
   }
 
   get position() {
@@ -53,6 +55,21 @@ class Snake {
   turnRight() {
     this.currentDirection++;
     if (this.currentDirection == 5) this.currentDirection = 1;
+  }
+  public update(steps: number){
+    snale.move(steps)
+  }
+  die(){
+    this.isCurrentlyActive == false;
+  }
+  get isActive() {
+   return this.isCurrentlyActive;
+  }
+  get type(){
+    return "snake";
+  }
+  grow(){
+    
   }
 }
 

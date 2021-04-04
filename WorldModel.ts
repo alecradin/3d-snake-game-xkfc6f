@@ -1,12 +1,14 @@
 import Snake from "./Snake";
 import View from "./View";
+import Actor from"./Actor";
+import ActorCollisionHandlers from "./ActorCollisionHandlers";
 class WorldModel {
   height: number;
   width: number;
-  snakes: Snake[] = [];
+  snakes: Actor;
   views: View[] = [];
 
-  constructor(height, width) {
+  constructor(height, width, aca:ActorCollisionHandlers) {
     this.height = height;
     this.width = width;
   }
