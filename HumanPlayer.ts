@@ -6,9 +6,8 @@ class HumanPlayer {
   p : Player;
   ih : InputHandler;
   sc : SnakeController
-  constructor(){
-    this.ih = InputHandler;
-    this.sc = SnakeController;
+  constructor(ih: InputHandler, sc: SnakeController){
+    
   }
 } 
 export default HumanPlayer;

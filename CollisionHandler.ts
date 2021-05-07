@@ -1,8 +1,5 @@
 import Colliadable from "./Colliadable";
 interface CollisionHandler {
-  display(): void;
-  applyAction(){
-
-  }
+  applyAction(): void;
 }
 export default CollisionHandler;

@@ -40,9 +40,8 @@ render(<App />, document.getElementById("root"));
 
 let snake = new Snake(new Point(5, 5), 3);
 let world = new WorldModel(10, 10);
-world.addSnake(snake);
 let view = new CanvasView(50);
-world.addView(view);
+
 
 let sc = new SnakeController(world, snake);
 let player = new AvoidWallsPlayer(sc);

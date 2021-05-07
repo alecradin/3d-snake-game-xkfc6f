@@ -57,8 +57,11 @@ class Snake {
     if (this.currentDirection == 5) this.currentDirection = 1;
   }
   public update(steps: number){
-    snale.move(steps)
+    Snake.move(steps)
   }
+static move(steps: number) {
+throw new Error("Method not implemented.");
+}
   die(){
     this.isCurrentlyActive == false;
   }

@@ -1,9 +1,9 @@
 
 class arrayIterator{
-  array: any;
+  Array: any
   index: number;
-  constructor(){
-    this.array = arr;
+  constructor(arr= []){
+    
     this.index = 0;
   }
   next(){

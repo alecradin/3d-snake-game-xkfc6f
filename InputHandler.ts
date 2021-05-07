@@ -1,18 +1,9 @@
 import Player from "./Player";
 import Snake from "./Snake";
 interface InputHandler {
-  display (p: Player) : void;
-  madeLeftMove(){
-
-  }
-  madeRightMove(){
-
-  }
-  resetLeftMove(){
-
-  }
-  resetRightMove(){
-
-  }
+  madeLeftMove(p: Player): void;
+  madeRightMove(p: Player): void;
+  resetLeftMove(s: Snake): void;
+  resetRightMove(s: Snake): void;
 }
 export default InputHandler;

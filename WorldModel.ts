@@ -12,13 +12,6 @@ class WorldModel {
     this.height = height;
     this.width = width;
   }
-
-  public addSnake(s: Snake) {
-    this.snakes.push(s);
-  }
-  public addView(v: View) {
-    this.views.push(v);
-  }
   public allSnakes() {
     return this.snakes;
   }
@@ -26,6 +19,7 @@ class WorldModel {
     for (let snake of this.snakes) snake.move(steps);
 
     for (let view of this.views) view.display(this);
+
   }
 
   public get worldHeight() {
@@ -33,6 +27,10 @@ class WorldModel {
   }
   public get worldWidth() {
     return this.width;
+  }
+  reset() {
+    let View = [];
+    let Actor = [];
   }
 }
 

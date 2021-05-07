@@ -1,27 +1,31 @@
-import WorldModel from "./WorldModel";
-class GameController {
-  world : WorldModel;
-  constructor(){
-    this.world = WorldModel;
-  }
-  player1(){
+import WorldModel from "./WorldModel";  
+class GameController {   
+  world: WorldModel;   
+lastTime: number;
+  constructor(g: Game) {   
+    this.world = WorldModel;   
+    }   
+    player1(){    
 
-  }
-  player2(){
+    }   
+    player2() {    
 
-  }
-  set player1 {
+    }   
+    set Player1() {    
 
-  }
-  set player2 {
+    }   
+    set Player2 () {    
 
+    }   
+    run(){   
+      this.lastTime = 0;  
+  }   
+  updateFrame(
+  requestAnimationFrame: GameController){       
+
+ } 
+  init(data) {
+    data.numOfHumanPlayers + data.numOfAIPlayers;
   }
-  run(){
-    this.lastTime = 0;
-  }
-  updateFrame(requestAnimationFrame:){
-    makeTurn.player1
-    makeTurn.player2
-  }
-}
-export default GameController;
+  }  
+        export default GameController;
